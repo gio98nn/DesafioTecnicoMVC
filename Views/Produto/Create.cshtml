@@ -1,0 +1,70 @@
+﻿@*@model produtoMVC.Models.ProdutoViewModel
+
+    <h2>Criar novo produto</h2>
+
+    <form asp-action="Create" method="post">
+        <div>
+            <label asp-for="Titulo"></label>
+            <input asp-for="Titulo" />
+            <span asp-validation-for="Titulo" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Descricao"></label>
+            <input asp-for="Descricao" />
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Preco"></label>
+            <input asp-for="Preco" type="number" />
+            <span asp-validation-for="Preco" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Estoque"></label>
+            <input asp-for="Estoque" type="number" />
+            <span asp-validation-for="Estoque" class="text-danger"></span>
+        </div>
+        <button type="submit">Criar</button>
+    </form>
+
+    <a asp-action="Index">Voltar para a lista</a>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }*@
+@model produtoMVC.Models.ProdutoViewModel
+
+<h2>Criar novo produto</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Titulo">Título:</label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Descricao">Descrição:</label>
+        <input asp-for="Descricao" class="form-control" />
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Preco">Preço:</label>
+        <input asp-for="Preco" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="Preco" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Estoque">Estoque:</label>
+        <input asp-for="Estoque" class="form-control" type="number" />
+        <span asp-validation-for="Estoque" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Criar</button>
+</form>
+
+<a asp-action="Index">Voltar para a lista</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
